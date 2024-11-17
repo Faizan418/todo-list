@@ -57,12 +57,6 @@ const updateTodo = (e)=>{
 
 }
 
-const saveLocalTodos = (todo) => {
-    let todos = [];
-    todos = JSON.parse(localStorage.getItem('todos'))
-    todos.push(todo)
-    localStorage.setItem('todos', JSON.stringify(todos))
-    
-}
+
 btnBox.addEventListener('click', addItem)
 ul.addEventListener('click', updateTodo)
