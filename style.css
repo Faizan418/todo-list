@@ -1,6 +1,6 @@
 body{
     background-color: #f0ebeb;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -10,8 +10,9 @@ body{
 }
 .box{
     background-color: #fff;
+    margin-top: 50px;
     /* padding: 20px; */
-    border-radius: 9px;
+    border-radius: 10px;
     width: 50%;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     display: flex;
@@ -20,7 +21,7 @@ body{
     align-items: center;
     transition: all 0.8s ease-in-out;
     /* align-content: center; */
-    height: 70%;
+    height: 100%;
 }
 .tital{
     /* border: 1px solid black; */
@@ -41,7 +42,8 @@ body{
 }
 .inp{
     border-radius: 7px;
-    border: none;
+    border: 1px solid rgb(199, 196, 196);
+    outline: none;
     padding: 10px;
     height: 30px;
     width: 90%;
@@ -54,7 +56,7 @@ body{
     padding: 10px 30px;
     border-radius: 7px;
     cursor: pointer;
-    transition: all 0.9s ease-in-out;
+    transition: all 0.5s ease-in-out;
     font-weight: bolder;
 }
 .add-btn:hover{
@@ -64,8 +66,53 @@ body{
     /* transform: scale(1.02); */
 }
 .list{
-    border: 1px solid black;
+    border: 1px solid rgb(211, 208, 208);
     margin-top: 80px;
     width: 80%;
     flex-direction: column;
+    margin-bottom: 40px;
+}
+.ul{
+   font-weight: bolder;
+   color: #0f5db6;
+}
+.ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 12px;
+    cursor: pointer;
+
+}
+.ul li p{
+    flex-grow: 1;
+    font-size: small;
+    /* padding: 5px; */
+    /* gap: 3px; */
+
+}
+.bttn{
+    padding: 6px 10px;
+    gap: 4px;
+    margin: 3px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: small;
+}
+/* .E-btn{
+    color: rgb(56, 202, 56);
+
+}
+.R-btn{
+    color: rgb(233, 46, 46);
+} */
+.bttn:hover{
+    /* background: #dad7d7; */
+}
+.R-btn:hover{
+    color: rgb(233, 46, 46);
+}
+.E-btn:hover{
+    color: rgb(56, 202, 56);
 }
