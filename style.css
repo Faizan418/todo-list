@@ -75,6 +75,7 @@ body{
 .ul{
    font-weight: bolder;
    color: #0f5db6;
+   
 }
 .ul li{
     display: flex;
@@ -82,6 +83,7 @@ body{
     align-items: center;
     margin-block-end: 12px;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 
 }
 .ul li p{
@@ -99,17 +101,9 @@ body{
     outline: none;
     font-weight: bold;
     font-size: small;
+    cursor: pointer;
 }
-/* .E-btn{
-    color: rgb(56, 202, 56);
 
-}
-.R-btn{
-    color: rgb(233, 46, 46);
-} */
-.bttn:hover{
-    /* background: #dad7d7; */
-}
 .R-btn:hover{
     color: rgb(233, 46, 46);
 }

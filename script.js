@@ -2,18 +2,28 @@ const inputbox = document.getElementById('inputbox');
 const btnBox = document.getElementById('btnBox');
 const ul = document.getElementById('ul');
 
+let editTodo = null;
+
+
 const addItem = () => {
     const inputText = inputbox.value.trim();
     if(inputText.length <= 0){
         alert('You must write something in your todo list.!')
-        
+        return false;
     }
+
+    if(btnBox.value === "Edit"){
+        editTodo.target.previousElementSibling.innerHTML = inputText;
+        btnBox.value = 'Add';
+        inputbox.value = '';
+
+    }
+    else{
     const li = document.createElement("li")
     const p = document.createElement("p")
     p.innerText = inputText
     li.appendChild(p)
-    ul.appendChild(li)
-    inputbox.value = ''
+ 
 
 
     const editbtn = document.createElement('button')
@@ -26,13 +36,35 @@ const addItem = () => {
     deletbtn.classList.add('bttn','R-btn')
     li.appendChild(deletbtn);
 
+    ul.appendChild(li)
+    inputbox.value = ''
+
+    saveLocalTodos(inputText);
+    }
 
 }
 
-const updateTodo = ()=>{
+const updateTodo = (e)=>{
+    if(e.target.innerHTML === 'remove'){
+        ul.removeChild(e.target.parentElement)
+    }
+    if(e.target.innerHTML === 'edit'){
+        inputbox.value = e.target.previousElementSibling.innerHTML;
+        inputbox.focus();
+        btnBox.value = 'Edit';
+        editTodo = e;
+    }
 
 }
 
+const saveLocalTodos = (todo) => {
+    let todos = [];
+    todos = JSON.parse(localStorage.getItem('todos'))
+    todos.push(todo)
+    localStorage.setItem('todos', JSON.stringify(todos))
+    // console.log(todos);
+    
+    
+}
 btnBox.addEventListener('click', addItem)
-
 ul.addEventListener('click', updateTodo)
